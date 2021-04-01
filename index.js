@@ -15,17 +15,17 @@ function createEmployeeRecords(arr){
     return arr.map(createEmployeeRecord)
 }
 
-function createDSObj(getType, dateStamp) {
+function createDSCObj(getType, dateStamp) {
     return {type: getType, date: dateStamp.slice(0,10), hour: parseInt(dateStamp.slice(-4))}
 }
 
 function createTimeInEvent(obj, dateStamp){
-    obj.timeInEvents.push(createDSObj("TimeIn", dateStamp))
+    obj.timeInEvents.push(createDSCObj("TimeIn", dateStamp))
     return obj
 }
 
 function createTimeOutEvent(obj, dateStamp){
-    obj.timeOutEvents.push(createDSObj("TimeOut", dateStamp))
+    obj.timeOutEvents.push(createDSCObj("TimeOut", dateStamp))
     return obj
 }
 
